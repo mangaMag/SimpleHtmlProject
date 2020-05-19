@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+	<title>But2014</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+	<style type="text/css">
+		section{
+
+			padding: 0;
+			margin:0;
+			width: 700px;
+			border:2px solid black;
+		}
+
+		h1{
+			margin-left: 20px;
+		}
+		input{
+			margin-bottom: 15px;
+		}
+		
+
+		section form div:first-of-type{
+			margin-left: 60px;
+			margin-top: 10px;
+		}
+		section form div:last-of-type{
+			margin-left: 170px;
+			margin-top: 20px;
+		}
+
+		
+	</style>
+        <script>
+            function msg()
+            {
+           var tab=[];
+           var interets=document.getElementsByTagName("input");
+           var j=-1;
+           for(i=0;i<interets.length;i++) 
+           {
+               if(interets[i].type=="checkbox")
+               {
+                   if(interets[i].checked)
+               {
+                 j++;
+                 tab[j]=interets[i].value;
+                  
+               }  
+           }
+           }
+            
+        var msginterets="";
+        if(tab.length==1)
+          msginterets="son centre d'intérêts est : "+tab[0]+".";
+      else
+      {
+         msginterets="ses centres d'intérêts sont : "; 
+         for(i=0;i<tab.length;i++)
+         {
+             msginterets+=tab[i];
+             if(i<(tab.length-2))
+              msginterets+=" , ";  
+            else
+            {
+                msginterets=msginterets+" et "+tab[(tab.length-1)]+"."; 
+                break;
+            }
+         }
+        
+      }         
+               
+                
+                var prn="";
+                var err="";
+                var msg="";
+                
+                
+                
+                
+                var nom =document.getElementById("nom").value;
+        if(!(nom!=null && nom.length!=0))
+        err=err+" NOM OBLIGATOIRE\n";
+        else
+            msg=msg+nom+" ";
+        var prenom =document.getElementById("prenom").value;
+        if(!(prenom!=null && prenom.length!=0))
+        err=err+" PRENOM OBLIGATOIRE\n";
+    else
+       msg=msg+prenom+", "; 
+    
+    //age
+    var age =document.getElementById("age").value;
+        if(!(age!=null && age.length!=0))
+        err=err+" Age OBLIGATOIRE\n";
+    else
+       msg=msg+"age "+age+" ans, ";
+    //sexe
+    prn=document.getElementsByName("sexe");
+        if(prn[0].checked)        
+        msg=msg+prn[0].value+" est marocain, ";
+        if(prn[1].checked)        
+        msg=msg+prn[1].value+" est marocaine, "; 
+    
+    msg=msg+msginterets;
+        
+        
+
+if(err.length>0)
+{
+    alert(err);
+    document.getElementById("message").innerHTML="";
+    }
+else
+    document.getElementById("message").innerHTML=msg;
+
+  
+    }
+        </script>
+</head>
+<body>
+	
+		<section>
+			<form action="" method="post">
+				<h1>Inscription</h1>
+				<label>Nom: </label>
+				<input type="text" name="nom" id="nom">
+				<label>Prénom: </label>
+				<input type="text" name="prenom" id="prenom"><br>
+				<label>Age:&nbsp; </label>
+				<input type="number" name="age" min="1" id="age"><br>
+				<label>Sexe: </label>
+				<label>Homme </label>
+				<input type="radio"  value="Il" name="sexe">
+				<label>Femme </label>
+                                <input type="radio" value="Elle" name="sexe" checked=""><br>
+				<label>Nationnalité: </label>
+				<label>Marocaine </label>
+				<input type="radio" name="nationalite">
+				<label>Etrangère </label>
+				<input type="radio" name="nationalite"><br>
+				<label>Intérêts: </label><br>
+
+				<div class="x1">
+					<label id="x">Lecture </label>
+					<input type="checkbox" id="L" value="lecture">
+					<label>Cinéma </label>
+					<input type="checkbox" value="cinéma">
+					<label>Sports </label>
+					<input type="checkbox" value="sports"><br>
+					<label>Théatre </label>
+					<input type="checkbox" value="théatre">
+					<label>Voyage </label>
+					<input type="checkbox" value="voyage">
+					<label>Sciences</label>
+					<input type="checkbox" value="science"><br>
+				</div>
+				<div class="x2">
+                                    
+                                    <input type="button" onclick="msg();" value="Afficher"/>
+                                    
+				</div>
+			</form>
+			
+		</section>
+    <p id="message"></p>
+	</body>
+
+</html>

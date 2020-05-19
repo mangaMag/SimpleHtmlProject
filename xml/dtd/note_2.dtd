@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT notes (note)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT note (to|from|heading|body)*>
+<!ATTLIST note
+    lang CDATA #IMPLIED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT to (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT from (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT heading (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT body (#PCDATA)>

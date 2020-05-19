@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+	<title>But du tp</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<style type="text/css">
+	*{
+	box-sizing: content-box;
+}
+
+header{
+	margin: 0 0 0 10px;
+}
+table,thead,tbody,tr,td{
+	border-collapse: collapse;
+	border: 1px solid #540D6E;
+
+}
+tbody tr:nth-child(even){
+	background-color: #F3FCF0;
+}
+tbody tr:nth-child(odd){
+	background-color: #1F271B;
+	color: #F3FCF0;
+}
+table{
+	width: 700px;
+}
+thead{
+	background-color: #FFD23F;
+	color: white;
+}
+thead tr th:nth-of-type(3){
+	text-align: right;
+}
+tbody tr td:nth-of-type(3){
+	text-align: right;
+}
+tbody tr td:nth-of-type(2){
+	text-align: center;
+}
+</style>
+</head>
+<body>
+	<header>
+		<p>Un établissement souhaite réaliser un simulateur pour le calcul de salaire net d'un fonctionnaire en fonction de son indice, sachant que:</p>
+		<ul>
+			<li>le salaire brut est égal à l'indice multiplié par la valeur du point</li>
+			<li>la valeur du point est de 4.83</li>
+			<li>Retenue de la retraite 6.00%</li>
+			<li>Retenue Mutuelle de 2.5%</li>
+			<li>Prime de Résidence de 13%</li>
+			<li>Retenue Impôt sur le revenu (I.R)</li>
+		</ul>
+		<p>Le barème de calcul d’impôt sur le revenu  se présente comme suit :</p>
+		<table>
+			<thead>
+				<tr>
+					<th>Tranches de revenus annuels</th>
+					<th>Taux de l'impôt sur le revenu</th>
+					<th>Somme à déduire en DH</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>De 0 à 28.000 DH</td>
+					<td>exonéré</td>
+					<td>0</td>
+				</tr>
+				<tr>
+					<td>De 28.001 à 40.000 DH</td>
+					<td>12%</td>
+					<td>3.360</td>
+				</tr>
+				<tr>
+					<td>De 41.001 à 50.000 DH</td>
+					<td>24%</td>
+					<td>8.160</td>
+				</tr>
+				<tr>
+					<td>De 50.001 à 60.000 DH</td>
+					<td>34%</td>
+					<td>13.160</td>
+				</tr>
+				<tr>
+					<td>De 60.001 à 150.000 DH</td>
+					<td>38%</td>
+					<td>15.560</td>
+				</tr>
+				<tr>
+					<td>Plus de 150.000 DH</td>
+					<td>40%</td>
+					<td>18.560</td>
+				</tr>
+			</tbody>
+		</table>
+	</header>
+	<article>
+		<ol>
+			<li>Réaliser une fonction (en JavaScript ou Jquery) qui permet de calculer le salaire Net sachant que :<br> 
+				Salaire Net=Salaire Brut* + Prime de résidence  - les retenues. (3 pt)<br>(*) : Salaire Brut=(valeur du point)*(nombre de points) (à saisir par l’utilisateur)
+			</li>
+			<li>Réaliser une interface HTML pour calculer le salaire net d’un fonctionnaire (Voir l’interface Annexe 01) (2,5 pt)</li>
+			<li>Réaliser une fonction JavaScript de validation des valeurs saisies. (1,5 pt)</li>
+
+		</ol>
+	</article>
+</body>
+</html>

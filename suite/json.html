@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Create Object from JSON String</h2>
+
+<p id="demo"></p>
+
+<script>
+    function fct()
+    {
+var text ='{"firstName":"John","lastName":"Doe" }';
+obj = JSON.parse(text);
+alert(obj.lastName);
+
+
+
+var tab = '{"employees":[' +
+'{"firstName":"John","lastName":"Doe" },' +
+'{"firstName":"Anna","lastName":"Smith" },' +
+'{"firstName":"Peter","lastName":"Jones" }]}';
+
+objjs=JSON.parse(tab);
+//alert(objjs.employees.length);
+tabjs=objjs.employees;
+var c="<tr><th>firstName</th><th>lastName</th></tr>";
+for(i=0;i<tabjs.length;i++)
+{
+    c=c+"<tr><td>"+tabjs[i].firstName+"</td><td>"+tabjs[i].lastName+"</td></tr>";
+}
+document.querySelector("#tab").innerHTML=c;
+    }
+    
+  function fct2()
+    {
+       var car = {type:"Fiat", model:"500", color:"white"};
+       var chainejson=JSON.stringify(car);
+       alert(chainejson+"   "+document.URL);
+       
+    }  
+    
+    
+    
+</script>
+<button onclick="fct()">jsonParse</button>
+<button onclick="fct2()">jsonStringify</button>
+<table id="tab" border="1">
+    
+</table>
+</body>
+</html>
+
